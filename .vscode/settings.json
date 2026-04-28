@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd \"c:\\\\Users\\\\meche\\\\Desktop\\\\SEM IV MINI PROJECT\\\\online-marketplace-for-unique-artisan-main\"; powershell -Command \"\\(Get-Item README\\.md\\)\\.Length\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
