@@ -33,12 +33,13 @@ const UserEditScreen = ({ match, history }) => {
       dispatch({ type: USER_UPDATE_RESET });
       history.push('/admin/userlist');
     } else {
-      if (!user.name || user._id !== userId) {
+      if (!user.name || String(user._id) !== String(userId)) {
         dispatch(getUserDetails(userId));
       } else {
         setName(user.name);
         setEmail(user.email);
         setIsAdmin(user.isAdmin);
+        setIsAdminSeller(user.isAdminSeller);
       }
     }
   }, [dispatch, history, userId, user, successUpdate]);
@@ -83,7 +84,7 @@ const UserEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="isadmin">
+            <Form.Group controlId="isadminseller">
               <Form.Check
                 type="checkbox"
                 label="Is Admin Seller"
